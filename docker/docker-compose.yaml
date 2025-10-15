@@ -595,6 +595,9 @@ x-shared-env: &shared-api-worker-env
   ENABLE_MAIL_CLEAN_DOCUMENT_NOTIFY_TASK: ${ENABLE_MAIL_CLEAN_DOCUMENT_NOTIFY_TASK:-false}
   ENABLE_DATASETS_QUEUE_MONITOR: ${ENABLE_DATASETS_QUEUE_MONITOR:-false}
   ENABLE_CHECK_UPGRADABLE_PLUGIN_TASK: ${ENABLE_CHECK_UPGRADABLE_PLUGIN_TASK:-true}
+  HTTP_PROXY: "http://172.17.0.1:7890"
+  HTTPS_PROXY: "http://172.17.0.1:7890"
+  NO_PROXY: "localhost,127.0.0.1,172.17.*.*,weaviate,qdrant,db,redis,web,worker,sandbox,plugin_daemon"
 
 services:
   # API service
